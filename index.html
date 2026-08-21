@@ -226,6 +226,11 @@ html{scroll-behavior:smooth;}
 .aktable tr:nth-child(even) td{background:#fbf3e0;}
 .aktable td.an{text-align:center;color:var(--sub);font-weight:800;width:42px;}
 .aktable td.al{text-align:center;color:var(--brand2);font-weight:900;width:46px;font-size:15px;}
+
+.quizsubmit{text-align:center;margin:14px 0 6px;}
+.quizsubmit button{background:var(--brand);color:#fff;border:none;border-radius:30px;padding:14px 42px;font-size:16px;font-weight:800;font-family:inherit;cursor:pointer;box-shadow:0 5px 16px rgba(224,115,58,.4);transition:.12s;}
+.quizsubmit button:hover{background:var(--brand2);transform:translateY(-2px);}
+@media print{ .quizsubmit{display:none;} }
 </style>
 </head>
 <body>
@@ -558,8 +563,7 @@ html{scroll-behavior:smooth;}
 <section class="megasec" id="quiz">
   <h2 class="sectitle">📝 互動測驗・20 題</h2>
   <p class="secsub">點選你的答案，會即時顯示對錯與解析並計分；可重作或一鍵看全部答案。</p>
-  <div class="scorepanel"><span>作答進度：</span><span id="quizscore">已作答 0 / 20</span><span style="flex:1"></span><button onclick="quizReset()">🔄 重新作答</button><button onclick="gradeQuiz()">✅ 交卷・看成績</button></div>
-  <div id="quizresult" style="display:none"></div>
+  <div class="scorepanel"><span>作答進度：</span><span id="quizscore">已作答 0 / 20</span><span style="flex:1"></span><button onclick="quizReset()">🔄 重新作答</button></div>
   <div class="qq"><p class="qs"><span class="qn">1</span>《上帝撿到槍：生命科學密碼》書名中「撿到槍」用來比喻什麼？</p><div class="qopts"><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">A</span><span>生物課本很難讀懂</span></button><button class="qopt" data-c="1" onclick="quizPick(this)"><span class="ol">B</span><span>生命複雜精巧到像開了外掛、火力全開</span></button><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">C</span><span>人類發明了武器</span></button><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">D</span><span>演化速度非常緩慢</span></button></div><div class="qexp"><b>✔ 正解 B</b>　作者用網路流行語「撿到槍」形容：宇宙前期只造得出簡單無機物，生命一登場卻複雜精巧到不可思議。</div></div>
   <div class="qq"><p class="qs"><span class="qn">2</span>生命所需的碳、氧等「重元素」，最主要是在哪裡形成的？</p><div class="qopts"><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">A</span><span>地球的海洋裡</span></button><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">B</span><span>月球表面</span></button><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">C</span><span>閃電擊中大氣時</span></button><button class="qopt" data-c="1" onclick="quizPick(this)"><span class="ol">D</span><span>大質量恆星內部的核融合</span></button></div><div class="qexp"><b>✔ 正解 D</b>　氫和氦太輕，較重的元素是在大質量恆星核心用核融合「燒」出來，恆星死亡爆炸後才灑向宇宙。</div></div>
   <div class="qq"><p class="qs"><span class="qn">3</span>一九六九年墜落澳洲的默奇森隕石，證明了什麼？</p><div class="qopts"><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">A</span><span>外星人存在</span></button><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">B</span><span>地球比想像中年輕</span></button><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">C</span><span>隕石會帶來疾病</span></button><button class="qopt" data-c="1" onclick="quizPick(this)"><span class="ol">D</span><span>生命所需的有機分子（如氨基酸）能在太空自然形成</span></button></div><div class="qexp"><b>✔ 正解 D</b>　隕石中驗出十五種氨基酸且為消旋（左右手都有），代表不是地球生物沾染，而是太空自然生成。</div></div>
@@ -580,6 +584,8 @@ html{scroll-behavior:smooth;}
   <div class="qq"><p class="qs"><span class="qn">18</span>關於人體的「解毒」，下列敘述何者正確？</p><div class="qopts"><button class="qopt" data-c="1" onclick="quizPick(this)"><span class="ol">A</span><span>肝臟會解毒，但有時反而把原本無毒的物質「解」成致癌物</span></button><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">B</span><span>解毒系統萬無一失，能處理所有毒物</span></button><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">C</span><span>解毒只靠流汗完成</span></button><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">D</span><span>毒物一定會被完全排出</span></button></div><div class="qexp"><b>✔ 正解 A</b>　解毒靠加氧或修改官能基；面對近百年爆量的人工化合物，有時反而活化成致癌物。</div></div>
   <div class="qq"><p class="qs"><span class="qn">19</span>螞蟻能舉起遠超自己體重的物體，真正的原因是什麼？</p><div class="qopts"><button class="qopt" data-c="1" onclick="quizPick(this)"><span class="ol">A</span><span>純粹的幾何尺寸效應：長度、面積、體積分別按一、二、三次方變化</span></button><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">B</span><span>昆蟲擁有特殊的神級肌肉</span></button><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">C</span><span>昆蟲不需要休息</span></button><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">D</span><span>昆蟲的骨骼是金屬做的</span></button></div><div class="qexp"><b>✔ 正解 A</b>　昆蟲肌肉與人幾乎相同；體型縮小時力氣（面積）掉得慢、體重（體積）掉得快，故相對力大。</div></div>
   <div class="qq"><p class="qs"><span class="qn">20</span>關於中醫的「經絡現象」，本書採取的看法較接近下列何者？</p><div class="qopts"><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">A</span><span>完全是迷信、毫無根據</span></button><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">B</span><span>經絡是一條實體的管線</span></button><button class="qopt" data-c="1" onclick="quizPick(this)"><span class="ol">C</span><span>現象客觀存在，本質可用神經的節段性與訊號交匯來理解</span></button><button class="qopt" data-c="0" onclick="quizPick(this)"><span class="ol">D</span><span>針灸沒有任何療效</span></button></div><div class="qexp"><b>✔ 正解 C</b>　針灸療效已通過嚴格回顧；遍尋實體經脈皆失敗，其本質較可能是脊髓節段上的神經交匯。</div></div>
+  <div class="quizsubmit"><button onclick="gradeQuiz()">✅ 交卷・看成績</button></div>
+  <div id="quizresult" style="display:none"></div>
 </section>
 <section class="megasec" id="answerkey" style="display:none">
   <h2 class="sectitle">📋 完整答案與解析</h2>
